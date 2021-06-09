@@ -1,0 +1,51 @@
+@import './partials';
+$language:'english';
+@mixin color($color)
+{
+    h1{
+background-color: $color;
+    }
+}
+@mixin commoncode($language) {
+    @if $language=='english'{
+        direction: ltr;
+    
+}
+
+@else{
+    direction: rtl;
+}
+}
+.main_header{
+    h1{
+        //
+        @include commoncode('hindi');
+    }
+}
+@media (min-width:1024px)
+{
+    
+        @include color(pink);
+        
+
+}
+@media(min-width:720px) and (max-width:1024px)
+{
+    
+        @include color(yellow); 
+    
+}
+@media(min-width:450px) and(max-width:720px)
+{
+    
+
+        @include color(green);
+    
+    
+}
+@media (max-width:450px)
+    {
+        
+        @include color(blue);
+
+}
